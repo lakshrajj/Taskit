@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/launch_bg2"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="-70dp"
+        android:layout_marginEnd="-100dp"
+        android:rotation="180"
+        app:srcCompat="@drawable/circle1" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginEnd="-60dp"
+        android:layout_marginBottom="-420dp"
+        android:rotation="0"
+        app:srcCompat="@drawable/circle1" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-10dp"
+        android:src="@drawable/logo" />
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/box1"
+        android:fontFamily="@font/trebuc"
+        android:elevation="30dp"
+        android:gravity="center"
+        android:layoutAnimation="@anim/item_layout_anim"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <EditText
+            android:id="@+id/EmailLogin"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/trebuc"
+            android:layout_height="45dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/box2"
+            android:elevation="5dp"
+            android:textSize="17sp"
+            android:ems="12"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:textAlignment="center" />
+
+
+        <EditText
+            android:id="@+id/PassLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:textSize="17sp"
+            android:fontFamily="@font/trebuc"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/box2"
+            android:elevation="5dp"
+            android:ems="12"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/newUser"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            android:fontFamily="@font/trebuc"
+            android:layout_marginBottom="10dp"
+            android:ems="13"
+            android:text="New User ?"
+            android:padding="5dp"
+            android:textAlignment="textEnd" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:background="@drawable/buttonpressed"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:elevation="10dp"
+            android:text="Login" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll1"
+        android:layout_centerHorizontal="true"
+        style="@style/TextView"
+        android:ems="8"
+        android:text="Login in your account"
+        android:textSize="40dp"
+
+        android:textStyle="bold" />
+
+</RelativeLayout>
