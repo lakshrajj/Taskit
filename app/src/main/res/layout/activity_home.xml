@@ -11,48 +11,111 @@
     tools:context=".HomeActivity">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/toolbar"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_marginTop="65dp"
-            android:id="@+id/recyclerViewAssignedTasks">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent">
 
 
 
-    <ImageView
-        android:id="@+id/titleHome"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-10dp"
-        android:src="@drawable/logo" />
+            <TextView
+                android:id="@+id/taskTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/toolbar"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-40dp"
+                android:fontFamily="@font/trebuc"
+                android:text="Today's Tasks :"
+                android:textColor="@color/ttext"
+                android:textSize="20sp" />
 
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/titleHome"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="-1dp"
-            android:gravity="center"
-            app:menu="@menu/menu_main">
+            <TextView
+                android:id="@+id/countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/toolbar"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-60dp"
+                android:fontFamily="@font/trebuc"
+                android:text="00:00:00"
+                android:textColor="@color/ttext"
+                android:textSize="10sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAssignedTasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/taskTV"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
 
-        </androidx.appcompat.widget.Toolbar>
+            <ImageView
+                android:id="@+id/titleHome"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:src="@drawable/logo" />
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_alignTop="@id/titleHome"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="-1dp"
+                app:menu="@menu/menu_main">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/availpointslayout"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/box1"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/coin" />
+
+                    <ProgressBar
+                        android:id="@+id/coinloadprogressbar"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/availPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" >
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+
+            </androidx.appcompat.widget.Toolbar>
+
     </RelativeLayout>
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav"

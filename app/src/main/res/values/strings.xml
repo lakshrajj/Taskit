@@ -2,4 +2,17 @@
     <string name="app_name">Taskit</string>
     <string name="open">open</string>
     <string name="close">close</string>
+
+
+    <string name="selected_item">Selected Reward :</string>
+
+    <string name="abouttaskit">Meet \'Taskit,\' your daily sustainability companion app. Taskit is designed to inspire and empower you to reduce your carbon footprint through small, meaningful actions. Every 24 hours, Taskit assigns you a set of eco-friendly tasks, from embracing public transportation to embracing energy efficiency, that align with your goals for a greener world. Track your accomplishments, unlock badges, and accumulate points as you complete tasks, all while contributing to a more sustainable future. With Taskit, you can lead the way in creating a better tomorrow, one task at a time.</string>
+
+    <string-array name="Rewards">
+
+        <item>Select</item>
+        <item>Duty Leave (1 Lecture)</item>
+        <item>Pen</item>
+        <item>More Rewards Soon</item>
+    </string-array>
 </resources>

@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
+
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="600dp"
@@ -125,16 +127,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/trebuc"
+            android:padding="10dp"
             android:background="@drawable/buttonpressed"
+            android:textAllCaps="false"
             android:elevation="10dp"
-            android:text="Register" />
+            android:text="Register-it" />
     </LinearLayout>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        app:lottie_rawRes="@raw/signupanimation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/ll1"
+
         android:layout_centerHorizontal="true"
         style="@style/TextView"
         android:ems="8"
@@ -142,5 +158,6 @@
         android:textSize="40dp"
 
         android:textStyle="bold" />
+
 
 </RelativeLayout>

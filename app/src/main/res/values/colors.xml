@@ -23,6 +23,8 @@
     <color name="csStrat">#1eff0e5a</color>
     <color name="csEnd">#1effd640</color>
 
+    <color name="red">#92140C</color>
+
     <color name="circletop">#00FF47</color>
     <color name="circlebot">#00A3FF</color>
     <color name="ttext">#000000</color>

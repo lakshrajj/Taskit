@@ -105,11 +105,24 @@
             android:id="@+id/loginBtn"
             android:layout_width="wrap_content"
             android:background="@drawable/buttonpressed"
+            android:textAllCaps="false"
+            android:fontFamily="@font/trebuc"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:elevation="10dp"
-            android:text="Login" />
+            android:text="Login-it" />
     </LinearLayout>
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        app:lottie_rawRes="@raw/loginanimation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
     <TextView
         android:id="@+id/textView"

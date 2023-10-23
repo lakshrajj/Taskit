@@ -14,6 +14,8 @@
                 android:id="@+id/nav_Settings"
                 android:title="Settings"
                 />
+        <item android:title="Redeem Points"
+        android:id="@+id/nav_redeem"/>
 
             <item android:title="About App"
                 android:id="@+id/nav_about"/>
