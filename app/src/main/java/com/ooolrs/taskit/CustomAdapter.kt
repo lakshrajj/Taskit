@@ -34,6 +34,5 @@ class CustomAdapter(private val dataset: List<Task>, private val onItemClicked: 
         holder.taskComBtn.setOnClickListener{onItemClicked.onItemClicked(item.badgeId,item.points,holder.view)}
     }
 
-
     override fun getItemCount() = dataset.size
 }

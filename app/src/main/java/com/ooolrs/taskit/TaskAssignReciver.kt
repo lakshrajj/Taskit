@@ -18,33 +18,35 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.ArrayList
 
-class TaskAssignReciver: BroadcastReceiver() {
+class TaskAssignReciver : BroadcastReceiver() {
     val currentUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
     val databaseReference2: DatabaseReference = FirebaseDatabase.getInstance().getReference("users")
     val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("tasks")
-    val databaseReference3: DatabaseReference = FirebaseDatabase.getInstance().getReference("users").child(currentUser!!.uid).child("badge")
-    var completedTasks = ArrayList<String>()
+    val databaseReference3: DatabaseReference =
+        FirebaseDatabase.getInstance().getReference("users").child(currentUser!!.uid).child("badge")
     val userId = currentUser!!.uid
 
-        override fun onReceive(context: Context?, intent: Intent?) {
+    override fun onReceive(context: Context?, intent: Intent?) {
         // Execute your function here
-            val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            createNotification(context, notificationManager)
+        val notificationManager =
+            context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        createNotification(context, notificationManager)
 
-        Toast.makeText(context,"Do Work Executed", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Do Work Executed", Toast.LENGTH_SHORT).show()
 
-            if (currentUser != null) {
-                // Retrieve available tasks from Firebase
-                getAvailableTasksNotCompleted(databaseReference3,context)
-                /**/
-            }
+        if (currentUser != null) {
+            // Retrieve available tasks from Firebase
+            getAvailableTasksNotCompleted(databaseReference3, context)
+            /**/
+        }
     }
 
     private fun getAvailableTasksFromDatabase(
         databaseReference: DatabaseReference,
         context: Context?,
         completedTasks: ArrayList<String>,
-        callback: (List<Task>) -> Unit,) {
+        callback: (List<Task>) -> Unit,
+    ) {
         val availableTasks = mutableListOf<Task>()
 
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -56,13 +58,14 @@ class TaskAssignReciver: BroadcastReceiver() {
                         //Toast.makeText(context, taskId, Toast.LENGTH_SHORT).show()
                         // val id = taskSnapshot.child("badgeId").getValue(String::class.java)
                         val title = taskSnapshot.child("title").getValue(String::class.java)
-                        val description = taskSnapshot.child("description").getValue(String::class.java)
+                        val description =
+                            taskSnapshot.child("description").getValue(String::class.java)
                         val points = taskSnapshot.child("points").getValue(Int::class.java)
 
 
                         if (taskId != null && title != null && description != null && points != null) {
                             //Toast.makeText(context, taskId.toString()+"---"+completedTasks, Toast.LENGTH_SHORT).show()
-                            if(taskId in completedTasks){
+                            if (taskId in completedTasks) {
                                 val task = Task(taskId, title, description, points)
                                 availableTasks.add(task)
 
@@ -80,24 +83,32 @@ class TaskAssignReciver: BroadcastReceiver() {
         })
     }
 
-    private fun getAvailableTasksNotCompleted(databaseReference3: DatabaseReference,context: Context?){
-         val completedTasks2 = ArrayList<String>()
+    private fun getAvailableTasksNotCompleted(
+        databaseReference3: DatabaseReference,
+        context: Context?
+    ) {
+        val completedTasks2 = ArrayList<String>()
         databaseReference3.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (taskSnapshot in dataSnapshot.children) {
                         // Add the name of the child to the array
-                        if(taskSnapshot.value == false) {
+                        if (taskSnapshot.value == false) {
                             completedTasks2.add(taskSnapshot.key.toString())
                         }
                     }
                 }
 
-                getAvailableTasksFromDatabase(databaseReference,context,completedTasks2) { availableTasks ->
+                getAvailableTasksFromDatabase(
+                    databaseReference,
+                    context,
+                    completedTasks2
+                ) { availableTasks ->
                     // Assign tasks to the current user
-                    assignTasksToUser(databaseReference2, userId, availableTasks,context)
+                    assignTasksToUser(databaseReference2, userId, availableTasks, context)
                 }
             }
+
             override fun onCancelled(databaseError: DatabaseError) {
                 // Handle database error
             }
@@ -107,22 +118,22 @@ class TaskAssignReciver: BroadcastReceiver() {
     private fun assignTasksToUser(
         databaseReference: DatabaseReference,
         userId: String,
-        availableTasks: List<Task>,context: Context?
+        availableTasks: List<Task>, context: Context?
     ) {
         // Randomly select  specified number of tasks from availableTasks
         // and assign them to the current user in the database
 
-        val tasksToAssign = getRandomTasks(availableTasks, 4,context)
+        val tasksToAssign = getRandomTasks(availableTasks, 4, context)
         val assignedTasksReference = databaseReference.child(userId)
 
         assignedTasksReference.child("assignedTasks").setValue("1")
         assignedTasksReference.child("assignedTasks").removeValue();
-/*
-        Toast.makeText(
-            context,
-            tasksToAssign.toString(),
-            Toast.LENGTH_SHORT
-        ).show()*/
+        /*
+                Toast.makeText(
+                    context,
+                    tasksToAssign.toString(),
+                    Toast.LENGTH_SHORT
+                ).show()*/
 
         for (task in tasksToAssign) {
             // Assuming you want to store assigned tasks as child keys with a boolean value (e.g., "task1": true)
@@ -135,7 +146,11 @@ class TaskAssignReciver: BroadcastReceiver() {
         // Implement the logic to assign tasks to the current user in your Firebase database
     }
 
-    private fun getRandomTasks(availableTasks: List<Task>, count: Int,context: Context?): List<Task> {
+    private fun getRandomTasks(
+        availableTasks: List<Task>,
+        count: Int,
+        context: Context?
+    ): List<Task> {
         if (count >= availableTasks.size) {
             return availableTasks
         }/*
