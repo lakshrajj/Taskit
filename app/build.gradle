@@ -43,11 +43,23 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:2.8.1"
     implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
-    implementation 'com.google.firebase:firebase-auth-ktx:22.1.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //firebase database
+    implementation 'com.google.firebase:firebase-database-ktx:20.3.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.2.0'
+
+    //Lottie Animation Dependancy
     implementation 'com.airbnb.android:lottie:6.1.0'
+
+    //GIF View Dependancy
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
+
+    //AES Encryption Dependancy
+    implementation 'bouncycastle:bcprov-jdk16:136'
+
+    //QR Code Dependancy
+
 }

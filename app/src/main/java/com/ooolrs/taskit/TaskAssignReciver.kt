@@ -137,7 +137,7 @@ class TaskAssignReciver : BroadcastReceiver() {
 
         for (task in tasksToAssign) {
             // Assuming you want to store assigned tasks as child keys with a boolean value (e.g., "task1": true)
-            assignedTasksReference.child("assignedTasks").child(task.badgeId).setValue(true)
+            assignedTasksReference.child("assignedTasks").child(task.badgeId).setValue(false)
             //assignedTasksReference.child("badge").child(task.badgeId).setValue(false)
 
         }// Assign 3 tasks per user

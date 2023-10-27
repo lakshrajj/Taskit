@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Taskit"
         tools:targetApi="31">
         <activity
+            android:name=".RewardHistory"
+            android:exported="false" />
+        <activity
             android:name=".RedeemPoints"
             android:exported="false" />
 

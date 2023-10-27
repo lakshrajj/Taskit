@@ -16,6 +16,9 @@
         android:id="@+id/nav_redeem"
         android:title="Redeem Points" />
 
+    <item
+        android:id="@+id/nav_rewardhistory"
+        android:title="Reward History" />
 
     <item
         android:id="@+id/nav_about"
