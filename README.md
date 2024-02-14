@@ -32,6 +32,22 @@ Taskit is simple to use:
 4. **Earn Points**: Receive points upon completing each task.
 5. **Redeem Rewards**: Accumulate points over time and redeem them for rewards within your institution.
 
+## Application Screenshots
+
+Here are some screenshots of the Taskit application:
+
+1. Home Screen
+   ![Home Screen](screenshots/home_screen.png)
+
+2. Task Details
+   ![Task Details](screenshots/task_details.png)
+
+3. Reward Redemption
+   ![Reward Redemption](screenshots/reward_redemption.png)
+
+Feel free to explore the app further by downloading it and trying it out on your Android device!
+
+
 ## Contributing
 
 Contributions to Taskit are welcome! If you have ideas for new features, improvements, or bug fixes, please feel free to open an issue or submit a pull request.
