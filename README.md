@@ -2,7 +2,7 @@
 
 Taskit is an Android application designed to incentivize users to engage in environmentally friendly activities in their daily lives. Users earn points by completing tasks related to sustainability and eco-conscious behavior. These points can be redeemed for rewards within their institution.
 
-![Taskit Logo](app_logo.png)
+![Taskit Logo](Taskit/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
 
 ## Features
 
